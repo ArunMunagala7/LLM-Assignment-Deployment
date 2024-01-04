@@ -28,6 +28,9 @@ import tempfile
 from langchain.document_loaders.image import UnstructuredImageLoader
 from PIL import Image
 import easyocr
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 load_dotenv()
 
