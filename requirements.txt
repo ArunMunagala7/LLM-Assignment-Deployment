@@ -1,5 +1,6 @@
 streamlit
 streamlit_chat
+pypdf
 langchain
 langchain_community
 transformers
@@ -12,4 +13,3 @@ numpy
 sentence-transformers
 torch
 faiss-cpu
-pypdf
