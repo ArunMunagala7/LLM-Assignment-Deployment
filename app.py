@@ -123,7 +123,7 @@ def main():
             loader = TextLoader(file_path, encoding = 'UTF-8')
             text.extend(loader.load())
         elif file.endswith('.pdf'):
-            loader = PDFPlumberLoader(file_path)
+            loader = PyPDFLoader(file_path)
             text.extend(loader.load())
         elif file.endswith('.docx') or file.endswith('.doc'):
             loader = Docx2txtLoader(file_path)
@@ -147,7 +147,7 @@ def main():
 
             loader = None
             if file_extension == ".pdf":
-                loader = PDFPlumberLoader(temp_file_path)
+                loader = PyPDFLoader(temp_file_path)
                 text.extend(loader.load())
             elif file_extension == ".docx" or file_extension == ".doc":
                 loader = Docx2txtLoader(temp_file_path)
