@@ -30,6 +30,7 @@ from PIL import Image
 import easyocr
 __import__('pysqlite3')
 import sys
+import sqlite3
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 load_dotenv()
