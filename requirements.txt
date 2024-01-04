@@ -4,6 +4,7 @@ pypdf
 langchain
 langchain_community
 transformers
+chromadb
 easyocr
 Pillow
 huggingface-hub
@@ -13,4 +14,3 @@ numpy
 sentence-transformers
 torch
 faiss-cpu
-chromadb
