@@ -28,10 +28,6 @@ import tempfile
 from langchain.document_loaders.image import UnstructuredImageLoader
 from PIL import Image
 import easyocr
-__import__('pysqlite3')
-import sys
-import sqlite3
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 load_dotenv()
 
@@ -201,8 +197,8 @@ def main():
                                            model_kwargs={'device': 'cpu'})
 
         # Create vector store
-        #vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
-        vector_store=Chroma.from_documents(text_chunks, embedding=embeddings)
+        vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
+        #vector_store=Chroma.from_documents(text_chunks, embedding=embeddings)
 
         # Create the chain object
         chain = create_conversational_chain(vector_store)

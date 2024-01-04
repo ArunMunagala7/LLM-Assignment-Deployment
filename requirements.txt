@@ -1,7 +1,6 @@
 streamlit
 streamlit_chat
 pypdf
-pysqlite3
 langchain
 langchain_community
 transformers
