@@ -4,7 +4,7 @@ pypdf
 langchain
 langchain_community
 transformers
-#chromadb
+chromadb
 easyocr
 Pillow
 huggingface-hub
