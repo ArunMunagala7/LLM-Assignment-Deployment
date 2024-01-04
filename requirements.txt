@@ -4,6 +4,7 @@ pypdf
 langchain
 langchain_community
 transformers
+replicate
 chromadb
 easyocr
 Pillow
