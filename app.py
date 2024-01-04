@@ -101,11 +101,11 @@ def create_conversational_chain(vector_store):
         model_kwargs = {"temperature": 0.01, "max_length" :500,"top_p":1})
     # # llm=HuggingFaceHub(repo_id="meta-llama/Llama-2-70b-chat-hf",model_kwargs={"temperature":0.01, "max_length":500,"top_p":1,"context_length":2048})
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    compressor = CohereRerank()
-    compression_retriever = ContextualCompressionRetriever(
-    base_compressor=compressor, base_retriever=vector_store.as_retriever(search_kwargs={"k": 5}))                                                       
+    # compressor = CohereRerank()
+    # compression_retriever = ContextualCompressionRetriever(
+    # base_compressor=compressor, base_retriever=vector_store.as_retriever(search_kwargs={"k": 5}))                                                       
     chain = ConversationalRetrievalChain.from_llm(llm=llm, chain_type='stuff',
-                                                 retriever=compression_retriever,#,search_type = "stuff"),
+                                                 retriever=vector_store.as_retriever(search_kwargs={"k": 5}),
                                                  memory=memory,combine_docs_chain_kwargs={'prompt': qa_prompt})#,return_source_documents=True,chain_type="map_reduce")
     
     return chain
